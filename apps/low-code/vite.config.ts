@@ -5,7 +5,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/low-code/',
+  base: process.env.NODE_ENV === 'development' ? '/' : '/low-code/',
   resolve: {
     alias: [
       { find: 'src', replacement: resolve(__dirname, 'src') },

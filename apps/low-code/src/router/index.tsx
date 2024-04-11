@@ -6,27 +6,32 @@ import { Layout } from 'src/views/layout';
 import ModalComponent from 'src/views/modal';
 import TableComponent from 'src/views/table';
 
-export const routes: any = createBrowserRouter([
+export const routes: any = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Component />,
+        },
+        {
+          path: 'form',
+          element: <FormComponent />,
+        },
+        {
+          path: 'modal',
+          element: <ModalComponent />,
+        },
+        {
+          path: 'table',
+          element: <TableComponent />,
+        },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <Component />,
-      },
-      {
-        path: 'form',
-        element: <FormComponent />,
-      },
-      {
-        path: 'modal',
-        element: <ModalComponent />,
-      },
-      {
-        path: 'table',
-        element: <TableComponent />,
-      },
-    ],
-  },
-]);
+    basename: process.env.NODE_ENV === 'development' ? '/' : '/low-code/',
+  }
+);
