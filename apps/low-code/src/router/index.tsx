@@ -1,12 +1,12 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import Component from 'src/views/component';
 import FormComponent from 'src/views/form';
 import { Layout } from 'src/views/layout';
 import ModalComponent from 'src/views/modal';
 import TableComponent from 'src/views/table';
 
-export const routes: any = createBrowserRouter(
+export const routes: any = createHashRouter(
   [
     {
       path: '/',
@@ -14,7 +14,7 @@ export const routes: any = createBrowserRouter(
       children: [
         {
           index: true,
-          element: <Component />,
+          element: <TableComponent />,
         },
         {
           path: 'form',
@@ -25,8 +25,8 @@ export const routes: any = createBrowserRouter(
           element: <ModalComponent />,
         },
         {
-          path: 'table',
-          element: <TableComponent />,
+          path: 'component',
+          element: <Component />,
         },
       ],
     },

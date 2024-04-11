@@ -10,7 +10,7 @@ export const Layout = () => {
   const items: any[] = [
     {
       key: '/',
-      label: '组件',
+      label: '表格',
     },
     {
       key: '/form',
@@ -21,8 +21,8 @@ export const Layout = () => {
       label: '弹窗',
     },
     {
-      key: '/table',
-      label: '表格',
+      key: '/component',
+      label: '组件',
     },
   ];
 
