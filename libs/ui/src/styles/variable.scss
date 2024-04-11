@@ -1,0 +1,19 @@
+$primary-color: #005dcc;
+
+$title-color: #041c36;
+$title-font-size: 24px;
+$title-font-weight: 500;
+
+$detail-label-font-size: 14px;
+$detail-label-color: #86909c;
+$detail-value-color: #1d2129;
+
+:export {
+  primaryColor: $primary-color;
+  titleColor: $title-color;
+  titleFontSize: $title-font-size;
+  titleFontWeight: $title-font-weight;
+  detailLabelFontSize: $detail-label-font-size;
+  detailLabelColor: $detail-label-color;
+  detailValueColor: $detail-value-color;
+}

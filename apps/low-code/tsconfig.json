@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "jsxImportSource": "@emotion/react",
+    "types": ["vite/client", "vitest"],
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "noImplicitAny": false,
+    "paths": {
+      "src/*": ["./src/*"],
+      "views/*": ["./src/views/*"],
+      "@libs/cmp": ["../../libs/cmp/src"],
+      "@libs/ui": ["../../libs/ui/src"],
+      "@libs/icons": ["../../libs/icons/src"]
+    }
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "extends": "../../tsconfig.base.json"
+}
