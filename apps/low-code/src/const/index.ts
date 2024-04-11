@@ -1,5 +1,5 @@
 export enum StorageNameMap {
-  component = 'component',
+  component = 'componentTemplate',
   form = 'formTemplate',
   modal = 'modalTemplate',
   table = 'tableTemplate',
