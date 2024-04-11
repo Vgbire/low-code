@@ -30,8 +30,8 @@ export const routes: any = createHashRouter(
         },
       ],
     },
-  ],
-  {
-    basename: process.env.NODE_ENV === 'development' ? '/' : '/low-code/',
-  }
+  ]
+  // {
+  //   basename: process.env.NODE_ENV === 'development' ? '/' : '/low-code/',
+  // }
 );
