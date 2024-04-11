@@ -5,15 +5,11 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/low-code',
+  base: '/low-code/',
   resolve: {
     alias: [
       { find: 'src', replacement: resolve(__dirname, 'src') },
       { find: 'views', replacement: resolve(__dirname, 'src/views') },
-      {
-        find: '@libs/cmp',
-        replacement: resolve(__dirname, '../../libs/cmp/src'),
-      },
       {
         find: '@libs/ui',
         replacement: resolve(__dirname, '../../libs/ui/src'),
@@ -26,15 +22,9 @@ export default defineConfig({
   },
   server: {
     port: 2200,
-    host: 'localhost',
+    host: '0.0.0.0',
     hmr: {
       overlay: false,
-    },
-    proxy: {
-      '/apis': {
-        target: 'https://home-test.novacloud.net.cn',
-        changeOrigin: true,
-      },
     },
   },
   preview: {
