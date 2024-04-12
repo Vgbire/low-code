@@ -22,16 +22,14 @@
 ```shell
 # 安装依赖
 npm install
+npm i -g nx
 
 # 启动项目
 nx serve low-code
 
+# 预览项目
+nx preview low-code
+
 # 构建项目
 nx build low-code
-
-# 构建storybook
-nx build-storybook ui
-
-# 查看依赖关系
-nx graph
 ```
