@@ -6,32 +6,27 @@ import { Layout } from 'src/views/layout';
 import ModalComponent from 'src/views/modal';
 import TableComponent from 'src/views/table';
 
-export const routes: any = createHashRouter(
-  [
-    {
-      path: '/',
-      element: <Layout />,
-      children: [
-        {
-          index: true,
-          element: <TableComponent />,
-        },
-        {
-          path: 'form',
-          element: <FormComponent />,
-        },
-        {
-          path: 'modal',
-          element: <ModalComponent />,
-        },
-        {
-          path: 'component',
-          element: <Component />,
-        },
-      ],
-    },
-  ]
-  // {
-  //   basename: process.env.NODE_ENV === 'development' ? '/' : '/low-code/',
-  // }
-);
+export const routes: any = createHashRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <TableComponent />,
+      },
+      {
+        path: 'form',
+        element: <FormComponent />,
+      },
+      {
+        path: 'modal',
+        element: <ModalComponent />,
+      },
+      {
+        path: 'component',
+        element: <Component />,
+      },
+    ],
+  },
+]);
