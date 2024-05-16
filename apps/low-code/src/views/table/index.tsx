@@ -17,8 +17,12 @@ import {
 import { useTableHook } from './hook/table';
 import { getTableTemplate } from './utils/template';
 
+export interface IColumnType extends ColumnType<any> {
+  id?: string;
+}
+
 interface TemplateList extends TableAttribute {
-  columns: ColumnType<any>[];
+  columns: IColumnType[];
   dataSource: AnyObject[];
   templateId: string;
 }

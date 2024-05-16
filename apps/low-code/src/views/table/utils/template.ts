@@ -1,10 +1,10 @@
-import { ColumnType } from 'antd/lib/table';
+import { IColumnType } from '..';
 import { AnyObject } from 'src/types';
 import { prettierCode } from 'src/utils';
 import { TableAttribute } from '../component/TableGlobalControl';
 
 export interface TemplateTableAttribute extends TableAttribute {
-  columns: ColumnType<any>[];
+  columns: IColumnType[];
   dataSource: AnyObject[];
 }
 

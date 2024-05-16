@@ -1,15 +1,15 @@
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import { ColumnType } from 'antd/lib/table';
+import { IColumnType } from '..';
 import { PlusOutlined } from '@ant-design/icons';
 import { Button, Table } from 'antd';
 import { AnyObject } from 'src/types';
 import { TableAttribute } from './TableGlobalControl';
 
 export interface TableBodyProps {
-  tableColumns: ColumnType<any>[];
-  setTableColumns: (tableColumns: ColumnType<any>[]) => void;
+  tableColumns: IColumnType[];
+  setTableColumns: (tableColumns: IColumnType[]) => void;
   dataSource: AnyObject[];
-  tableDemoColumns: ColumnType<any>[];
+  tableDemoColumns: IColumnType[];
   addTableColumns: () => void;
   tableAttribute: TableAttribute;
 }

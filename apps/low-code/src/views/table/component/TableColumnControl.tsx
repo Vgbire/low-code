@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ColumnType } from 'antd/lib/table';
+import { IColumnType } from '..';
 import { CloseOutlined } from '@ant-design/icons';
 import { Selection } from '@libs/ui';
 import {
@@ -18,10 +18,10 @@ import { renderTypeList } from '../utils/const';
 import { generateRender, getRenderTemplate } from '../utils/renderTemplate';
 
 interface TableColumnControlProps {
-  currentColumn: ColumnType<AnyObject>;
-  setCurrentColumn: (currentColumn?: ColumnType<AnyObject>) => void;
-  tableColumns: ColumnType<AnyObject>[];
-  setTableColumns: (tableColumns: ColumnType<AnyObject>[]) => void;
+  currentColumn: IColumnType;
+  setCurrentColumn: (currentColumn?: IColumnType) => void;
+  tableColumns: IColumnType[];
+  setTableColumns: (tableColumns: IColumnType[]) => void;
   dataSource: AnyObject[];
   setDataSource: (dataSource: AnyObject[]) => void;
   addTableColumns: () => void;
@@ -76,8 +76,7 @@ export const TableColumnControl = (props: TableColumnControlProps) => {
         }
       }
       const index = tableColumns.findIndex(
-        (column: ColumnType<any>) =>
-          column.dataIndex === currentColumn.dataIndex
+        (column: IColumnType) => column.dataIndex === currentColumn.dataIndex
       );
       const column = form.getFieldsValue(true);
       setCurrentColumn(column);
@@ -92,7 +91,7 @@ export const TableColumnControl = (props: TableColumnControlProps) => {
         form={form}
         onValuesChange={onValuesChange}
         labelCol={{ span: 6 }}
-        key={currentColumn.dataIndex as string}
+        key={currentColumn.id}
       >
         <Form.Item label="标题" name="title">
           <Input />

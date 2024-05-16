@@ -1,32 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { ColumnType } from 'antd/lib/table';
+import { IColumnType } from '..';
 import { AnyObject } from 'src/types';
-import { shortUuid } from 'src/utils';
+import { shortUuid, uuid } from 'src/utils';
 import { TableAttribute } from '../component/TableGlobalControl';
 
 // 在modal模板需要用到Table，复用代码封装了Table Hook
 export const useTableHook = () => {
   // 当前选中的表单项索引
-  const [currentColumn, setCurrentColumn] = useState<ColumnType<any>>();
+  const [currentColumn, setCurrentColumn] = useState<IColumnType>();
 
   // 表单项列表
-  const [tableColumns, setTableColumns] = useState<ColumnType<any>[]>([
+  const [tableColumns, setTableColumns] = useState<IColumnType[]>([
     {
       dataIndex: 'name',
       title: '名称',
+      id: uuid(),
     },
     {
       dataIndex: 'status',
       title: '状态',
+      id: uuid(),
     },
     {
       dataIndex: 'createTime',
       title: '发送时间',
+      id: uuid(),
     },
   ]);
 
-  const onHeaderCell = (column: ColumnType<any>) => {
+  const onHeaderCell = (column: IColumnType) => {
     return {
       onClick: (e) => {
         e.stopPropagation();
@@ -90,6 +94,7 @@ export const useTableHook = () => {
     const column = {
       title: '默认',
       dataIndex: 'default' + shortUuid(),
+      id: uuid(),
     };
     tableColumns.splice(
       index === -1 ? tableColumns.length : index + 1,
