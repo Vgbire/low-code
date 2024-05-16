@@ -89,7 +89,7 @@ export const useTableHook = () => {
     );
     const column = {
       title: '默认',
-      dataIndex: 'default',
+      dataIndex: 'default' + shortUuid(),
     };
     tableColumns.splice(
       index === -1 ? tableColumns.length : index + 1,

@@ -133,7 +133,7 @@ const FormComponent = () => {
           }}
           style={{ marginTop: 5, float: 'right' }}
         >
-          确认
+          控制台打印表单数据
         </Button>
       </Col>
       <Col span={8} style={{ padding: '10px 15px 10px' }}>

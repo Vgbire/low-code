@@ -6,7 +6,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import { CloseOutlined } from '@libs/icons';
 import { Button, Col, Form, Row } from 'antd';
 import { FormItem } from 'src/component/FormItem';
-import { uuid } from 'src/utils';
+import { shortUuid, uuid } from 'src/utils';
 import { FormAttribute } from 'src/views/form/component/FormGlobalControl';
 
 export interface FormBodyProps {
@@ -100,7 +100,7 @@ const FormBody = (props: FormBodyProps) => {
         onClick={() => {
           columns.push({
             label: '默认',
-            name: 'default',
+            name: 'default' + shortUuid(),
             type: 'input',
             options: [],
             key: uuid(),
