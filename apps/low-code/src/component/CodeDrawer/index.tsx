@@ -9,7 +9,7 @@ import { copy } from 'src/utils';
 highlight.registerLanguage('typescript', typescript);
 highlight.registerLanguage('xml', xml);
 
-export const CodeDrawer = forwardRef((props: any, ref) => {
+export const CodeDrawer = forwardRef<unknown, any>((_props, ref) => {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState('');
 
