@@ -1,6 +1,4 @@
-import React from 'react';
 import BaseIcon from '../../components/base-icon';
-import { ReactComponent as SVG } from '../../svg/filled/error.svg';
 
 interface IProps {
   [key: string]: any;
@@ -8,14 +6,16 @@ interface IProps {
 export const ErrorFilled = (props: IProps) => {
   return (
     <BaseIcon {...props}>
-      <SVG
-        style={{
-          height: '1em',
-          width: '1em',
-          fontSize: '1em',
-          fill: 'currentcolor',
-        }}
-      />
+      <svg className="cmp-icon-inner" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle id="椭圆形" cx="32" cy="32" r="32"></circle>
+        <path
+          d="M45.6645047,18.3354953 L18.3354953,45.6645047 M18.3354953,18.3354953 L45.6645047,45.6645047"
+          id="形状结合备份"
+          stroke="#FFFFFF"
+          stroke-width="6"
+          stroke-linecap="round"
+        ></path>
+      </svg>
     </BaseIcon>
   );
 };

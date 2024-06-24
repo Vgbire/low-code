@@ -1,6 +1,4 @@
-import React from 'react';
 import BaseIcon from '../../components/base-icon';
-import { ReactComponent as SVG } from '../../svg/outlined/search.svg';
 
 interface IProps {
   [key: string]: any;
@@ -8,14 +6,13 @@ interface IProps {
 export const SearchOutlined = (props: IProps) => {
   return (
     <BaseIcon {...props}>
-      <SVG
-        style={{
-          height: '1em',
-          width: '1em',
-          fontSize: '1em',
-          fill: 'currentcolor',
-        }}
-      />
+      <svg className="cmp-icon-inner" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path
+          d="M14.4,13.2l-2.6-2.6c0.8-1,1.3-2.2,1.3-3.6c0-3.2-2.6-5.8-5.8-5.8C4,1.1,1.4,3.7,1.4,6.9s2.6,5.8,5.8,5.8
+	c1.2,0,2.4-0.4,3.3-1l2.7,2.7c0.2,0.2,0.5,0.2,0.7,0l0.5-0.5C14.6,13.7,14.6,13.4,14.4,13.2z M3.1,6.9c0-2.3,1.8-4.1,4.1-4.1
+	c2.3,0,4.1,1.8,4.1,4.1S9.4,11,7.2,11C4.9,11,3.1,9.2,3.1,6.9z"
+        />
+      </svg>
     </BaseIcon>
   );
 };
