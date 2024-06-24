@@ -30,9 +30,9 @@ jobs:
           npm i -g nx
           npm install
       - name: Build
-        run: nx build low-code
+        run: nx build react
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/apps/low-code
+          publish_dir: ./dist/apps/react

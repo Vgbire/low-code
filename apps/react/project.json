@@ -1,15 +1,17 @@
 {
-  "name": "low-code",
+  "name": "react",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/low-code/src",
+  "sourceRoot": "apps/react/src",
   "projectType": "application",
+  "sideEffect": ["dayjs"],
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/low-code"
+        "outputPath": "dist/apps/react"
       },
       "configurations": {
         "development": {
@@ -24,15 +26,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "low-code:build"
+        "buildTarget": "react:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "low-code:build:development",
+          "buildTarget": "react:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "low-code:build:production",
+          "buildTarget": "react:build:production",
           "hmr": false
         }
       }
@@ -41,14 +43,14 @@
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "low-code:build"
+        "buildTarget": "react:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "low-code:build:development"
+          "buildTarget": "react:build:development"
         },
         "production": {
-          "buildTarget": "low-code:build:production"
+          "buildTarget": "react:build:production"
         }
       }
     },
@@ -57,10 +59,8 @@
       "outputs": ["{options.reportsDirectory}"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/low-code"
+        "reportsDirectory": "../../coverage/apps/react"
       }
     }
-  },
-  "tags": [],
-  "sideEffect": ["dayjs"]
+  }
 }
