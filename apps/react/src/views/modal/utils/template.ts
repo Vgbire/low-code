@@ -26,7 +26,7 @@ export const getModalTemplate = (
     ''
   );
   return prettierCode(`import React, { forwardRef, useImperativeHandle, useState } from 'react';
-  import { Modal, Form, Checkbox, Input, Radio, Select, Switch } from 'antd';
+  import { Modal, Form, Checkbox, Input, Radio, Select, Switch, message } from 'antd';
 
   interface ${name}Props {}
 
@@ -41,9 +41,20 @@ export const getModalTemplate = (
   		},
   	}));
 
-  	const handleOk = () => {
-  		setOpen(false);
-  	};
+  	const [submitLoading, setSubmitLoading] = useState(false);
+    const handleOk = () => {
+      // 判断form是否存在
+      form
+        ?.validateFields()
+        .then((values) => {
+          console.log(values)
+          message.success('操作成功！');
+          cancel();
+        })
+        .finally(() => {
+          setSubmitLoading(false);
+        });
+    };
   	const cancel = () => {
   		setOpen(false);
   	};
@@ -53,6 +64,7 @@ export const getModalTemplate = (
   			open={open}
   			onOk={handleOk}
   			onCancel={cancel}
+        okButtonProps={{ loading: submitLoading }}
         ${modalAttributeString}>
         ${generateBody(body, formAttribute, tableAttribute)}
   		</Modal>
